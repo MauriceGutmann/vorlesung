@@ -10,42 +10,22 @@ import org.junit.Test;
 
 public class TestCalculator {
 	
-	//private static Calculator cal;
+	private static Calculator cal;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		//cal = new Calculator();
+		cal = new Calculator();
 	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
 	@Test
 	public void testAdd() {
-		Calculator cal = new Calculator();
-		assertEquals(cal.add(5, 9),14,0);
-		//fail("Not yet implemented");
+		assertEquals(14,cal.add(5, 9),0);
 	}
-	
 	@Test (expected = MyException.class)
 	public void testDivWithDivByZero() throws MyException {
-		Calculator cal = new Calculator();
 		cal.div(7,0);
 	}
-	
 	@Test
 	public void testDiv() throws MyException {
-		Calculator cal = new Calculator();
-		assertEquals(cal.div(9, 4),2,0.25);
+		assertEquals(2.1,cal.div(9, 4),0.20);
 	}
-
 }
